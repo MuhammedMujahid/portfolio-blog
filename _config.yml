@@ -41,8 +41,8 @@ disqus_shortname:   taylantatli
 #twitter:            username
 #facebook:           username
 github-url:         username
-#stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
-#linkedin:          username
+stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
+linkedin:          username
 #xing:              username
 #instagram:          username
 #lastfm:            username
@@ -52,8 +52,8 @@ github-url:         username
 #foursquare:        username
 #steam:              username
 #dribbble:          username
-#youtube:           username
-#youtube-channel:   channel
+youtube:           username
+youtube-channel:   channel
 #soundcloud:        username
 #weibo:             username
 #flickr:            username
