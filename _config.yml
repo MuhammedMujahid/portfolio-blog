@@ -8,7 +8,7 @@ logo:               'assets/img/logo.png'
 background:         'assets/img/placeholder-big.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
-url:                https://taylantatli.github.io/Moon
+url:                https://muhammedmujahid.github.io/portfolio-blog/
 
 # Jekyll
 permalink:          /:title/
@@ -40,9 +40,9 @@ disqus_shortname:   MuhammedMujahid
 #email:
 #twitter:            username
 #facebook:           username
-github-url:         https://github.com/MuhammedMujahid
-#stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
-linkedin:          username
+github-url:         MuhammedMujahid
+stackoverflow:     5770937/makhmed-mujahid   
+linkedin:          muhammed-mujahid-07aba410b
 #xing:              username
 #instagram:          username
 #lastfm:            username
@@ -52,8 +52,8 @@ linkedin:          username
 #foursquare:        username
 #steam:              username
 #dribbble:          username
-youtube:           username
-youtube-channel:   channel
+#youtube:           username
+youtube-channel:   UCk5kaSE1OVt8Bh8ZfdRfYUQ
 #soundcloud:        username
 #weibo:             username
 #flickr:            username
