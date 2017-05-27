@@ -35,5 +35,3 @@ else
   next(): returns next token, and returns error if there is no next token
   hasNextType(): returns true if there is another token of type
   nexType(): returns type of the next token
-
-##
