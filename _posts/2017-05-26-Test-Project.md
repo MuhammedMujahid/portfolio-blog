@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "Moon Jekyll Theme"
-date:   2016-04-06
+date:   2017-04-06
 excerpt: "Minimal, one column Jekyll theme for your blog."
 project: true
 tag:
-- jekyll 
+- jekyll
 - moon
 - blog
 - about
@@ -14,20 +14,20 @@ comments: true
 ---
 
 ![Moon Homepage](https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png)    
-    
+
 <center><b>Moon</b> is a minimal, one column jekyll theme.</center>
-     
+
  I'm not a developer or designer. And I don't add footer to show who did this theme. If you like this theme or using it, please give a **star** for motivation, It makes me happy.
 
 <iframe src="https://ghbtns.com/github-btn.html?user=TaylanTatli&repo=Moon&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>    
-      
+
 ## Installation
 * Fork the [Moon repo](https://github.com/TaylanTatli/Moon/fork)
 * Edit `_config.yml` file.
 * Remove sample posts from `_posts` folder and add yours.
 * Edit `index.md` file in `about` folder.
 * Change repo name to `YourUserName.github.io`    
-     
+
 That's all.
 
 ## Preview
@@ -46,7 +46,7 @@ That's all.
 	https://cloud.githubusercontent.com/assets/754514/14509715/61aa9d00-01d6-11e6-81a6-c6837edf2e84.png
 {% endcapture %}
 {% include gallery images=images caption="Moon Theme on Small Screen Size" cols=2 %}      
-      
+
 See a [live version of Moon](http://taylantatli.github.io/Moon) hosted on GitHub.      
 
 ## Site Setup
@@ -158,4 +158,3 @@ Found a bug or aren't quite sure how something works? By all means [file a GitHu
 ## License
 
 This theme is free and open source software, distributed under the MIT License. So feel free to use this Jekyll theme on your site without linking back to me or including a disclaimer.
-
