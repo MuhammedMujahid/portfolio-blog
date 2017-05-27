@@ -12,7 +12,7 @@ comments: false
 
 ## Compound if Statments
 
-### Allows to group number of boolean tests.
+  Allows to group number of boolean tests.
 
 {% highlight css %}
 if(firstBooleanExpression)
@@ -24,16 +24,16 @@ else
 {% endhighlight %}
 
 ## Switch Statements
-### allows for multiple value control flow by evaluating an integer, string or enum expression
+  allows for multiple value control flow by evaluating an integer, string or enum expression
 
 ## Break / continue Statements
-### Java supports break statement which allows to immediately terminate a loop
-### Continue allows to stops current iteration and proceed with subsequent ones
+  Java supports break statement which allows to immediately terminate a loop
+  Continue allows to stops current iteration and proceed with subsequent ones
 
 ## java.util.Scanner Methods
-### hasNext(): returns true if there is another token in input stream
-### next(): returns next token, and returns error if there is no next token
-### hasNextType(): returns true if there is another token of type
-### nexType(): returns type of the next token
+  hasNext(): returns true if there is another token in input stream
+  next(): returns next token, and returns error if there is no next token
+  hasNextType(): returns true if there is another token of type
+  nexType(): returns type of the next token
 
 ##
