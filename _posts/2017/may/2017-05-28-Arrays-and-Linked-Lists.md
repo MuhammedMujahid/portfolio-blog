@@ -10,6 +10,8 @@ tag:
 
 comments: false
 ---
+Lets quickly do a refresher on Arrays and Singly Linked Lists. I'll jot down notes as I learn.
+
 ## Arrays
 - An array is a collection of elements of the same type
 - Each cell has an index numbered 0, 1, 2 and so forth
