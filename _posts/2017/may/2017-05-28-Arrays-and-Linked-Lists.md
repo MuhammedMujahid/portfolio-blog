@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Arrays and Linked Lists"
+title:  "Singly Linked Lists"
 date:   2017-05-28
-excerpt: "Arrays and Linked Lists"
+excerpt: "Singly Linked Lists"
 tag:
 - java
 - EECS 2011
@@ -24,6 +24,7 @@ comments: false
 <figcaption>Inserting a Node</figcaption>
  <a href="http://www.java2novice.com/images/sll_insert_after.png"><img src="http://www.java2novice.com/images/sll_insert_after.png"></a>
 </figure>
+
 
 {% highlight java %}
 public class SinglyLinkedListImpl<T> {
@@ -167,7 +168,7 @@ class Node<T> implements Comparable<T> {
     public void setNextRef(Node<T> ref) {
         this.nextRef = ref;
     }
-    @Override
+
     public int compareTo(T arg) {
         if(arg == this.value){
             return 0;
