@@ -6,7 +6,7 @@ excerpt: "Object Oriented Principles"
 tag:
 - java
 - EECS 2011
-- object oriented
+- OOP
 
 comments: false
 ---
