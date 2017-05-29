@@ -25,6 +25,7 @@ comments: false
  <a href="http://www.java2novice.com/images/sll_insert_after.png"><img src="http://www.java2novice.com/images/sll_insert_after.png"></a>
 </figure>
 
+## Singly Linked List Implementation
 
 {% highlight java %}
 public class SinglyLinkedListImpl<T> {
