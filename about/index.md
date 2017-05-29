@@ -10,7 +10,7 @@ comments: false
 
 ## Why I Blog?
 
-- **Forces in Depth Research** - Even if you write about fundamental topics, it require you to do in-depth research on that topic. Resulting in me reading multiple books, blog posts and lots of code. Even if no body reads my posts, I will have a thorough understanding of that topic and can use it as a quick reference later on when coding.
+- **Forces in Depth Research** - Even if I write about fundamental topics, it will require me to do in-depth research on that topic. Resulting in me reading multiple book chapters, blog posts and lots of code. Even if no body reads my posts, I will have a thorough understanding of that topic and can use it as a quick reference later on when coding.
 
 - **Forces Practice** - if you really want to grasp something well enough to blog about it, you need to practice using it i.e. you need to code. When writing about control flow in Java, I practiced using: If Else, Case statements, and the ternary operator, and learned when to use each.
 
