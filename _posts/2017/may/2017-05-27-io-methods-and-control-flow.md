@@ -14,7 +14,7 @@ comments: false
 
   Allows to group number of boolean tests.
 
-{% highlight css %}
+{% highlight java %}
 if(firstBooleanExpression)
   firstbody
 else if(secondBooleanExpression)
