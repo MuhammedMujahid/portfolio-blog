@@ -1,0 +1,63 @@
+<h2 id="abstraction">Abstraction</h2>
+<ul>
+  <li>to simplify a system to it’s most fundamental parts.</li>
+  <li>Combining Abstraction and data structures gives rise to abstract data types (ADT)</li>
+  <li>An ADT is a model of a data structure that specifies the type of data stored</li>
+  <li>the adt specifies what it’s operations does but not how it does it</li>
+</ul>
+
+<h2 id="abstract-classes">Abstract Classes</h2>
+<ul>
+  <li>They have on and only purpose: <strong>to be extended</strong></li>
+  <li>classes that want to extend an abstract class must be sub classes of that abstract class</li>
+  <li>Abstract classes cannot be instantiated but can define methods which all of it’s implementations will have.</li>
+</ul>
+
+<h2 id="encapsulation">Encapsulation</h2>
+<p>hiding what a class knows by making it’s instance variables private. Only allowing access through getters and setters. Setters allow you to implement constraints, so instance variables are not set to inappropriate value</p>
+
+<h2 id="design-patterns-two-types">Design Patterns (Two Types)</h2>
+<p><strong>Algorithmic Patterns:</strong> examples include recursion algorithms, brute force algorithms, amortization, etc.</p>
+
+<p><strong>Software Design Patterns:</strong> examples include iterator, adapter, position, composition, etc.</p>
+
+<h2 id="classes">Classes</h2>
+<ul>
+  <li>Classes are the basis for object oriented programming</li>
+  <li>Every variable is either a base variable or a reference variable</li>
+  <li>Classes are blueprints for objects and provide them with a concise and consistent view without revealing inner details or too much information.</li>
+</ul>
+
+<h2 id="interfaces">Interfaces</h2>
+<ul>
+  <li>Interfaces are the main structural element that enforce an API</li>
+  <li>Interfaces contain public abstract methods and constants</li>
+  <li>Interfaces have no constructors and therefore cannot be directly instantiated</li>
+  <li>A class that implements an interface must implement <strong>all of it’s methods</strong></li>
+  <li>Since you must implement all of it’s methods, interfaces are <strong>non-adaptable</strong> since you cannot add new methods without breaking the holy contract.</li>
+  <li>Interfaces can be flexible since a class can implement as many interfaces as it likes regardless of where it is on the class hierarchy</li>
+</ul>
+
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+  <li>Provides a way to organize classes in an hierarchical manner</li>
+  <li>A subclass extends a superclass</li>
+  <li>A subclass inherits (non-constructor) members of its superclass</li>
+  <li>A class can extend a superclass and provide it with new data</li>
+  <li>Java is a single inheritance object oriented language, which means it can only extend exactly one parent class.</li>
+</ul>
+
+<h2 id="inheritance-x-constructors">Inheritance x constructors</h2>
+<ul>
+  <li>Constructors are never inherited in java, therefore every class must define it’s own constructors</li>
+  <li>The first operation in the constructor of a subclass should be to invoke the constructor of the superclass</li>
+  <li>The superclass is invoked explicitly by using the keyword superclass</li>
+  <li>If the subclass does NOT make a explicit call to super or use the keyword ‘this’, then an implicit call to super() will be made (empty parameter of the super class constructor)</li>
+</ul>
+
+<h2 id="polymorphism">Polymorphism</h2>
+<ul>
+  <li>Polymorphism means taking on many forms</li>
+  <li>Polymorphism allows one method to work on many classes</li>
+  <li><strong>Dynamic Dispatch:</strong> process that’s works at runtime that calls the most specific version of a overidden method</li>
+</ul>
