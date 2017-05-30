@@ -19,8 +19,14 @@ Lets quickly do a refresher on Arrays and Singly Linked Lists. I'll jot down not
 - Elements in arrays can contain primitive types or reference types
 
 ## Singly Linked Lists
-- Each node has a **single** link to the next node
+- Each node has a **single** link to the next node (stored as auxilliary data)
 - It does not store a pointer or reference to the previous node
+- Head can be pointing to null if array is empty
+- Or pointing to something
+- There is no index system in singly linked list
+- So elements cannot be accessed directly
+- To access an element, you must start from head node and traverse down list.
+
 
 <figure>
 <figcaption>Inserting a Node</figcaption>
