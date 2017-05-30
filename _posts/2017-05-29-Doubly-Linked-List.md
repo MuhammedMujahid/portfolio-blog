@@ -22,4 +22,19 @@ comments: false
 - TODO: elaborate
 - **test will have something to implement insertion or deletion**
 
-## 
+## Deletion
+- TODO: elaborate
+- find the element you want to remove
+- set the tail of the previous element to the element after the element you want to remove.
+- Approximately only third of data is useful in doubly linked list as user data
+- Since you need to store reference to next and previous
+
+## Circular Linked Lists
+- 
+
+
+
+
+{% highlight java %}
+
+{% endhighlight %}
