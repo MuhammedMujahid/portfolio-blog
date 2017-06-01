@@ -2,7 +2,7 @@
 layout: post
 title:  "Doubly Linked Lists"
 date:   2017-05-28
-excerpt: "Doubly Linked Lists"
+excerpt: "Next in the list of things I pretend to know (Pun intended) are Doubly Linked List"
 tag:
 - java
 - EECS 2011
@@ -30,7 +30,7 @@ comments: false
 - Since you need to store reference to next and previous
 
 ## Circular Linked Lists
-- 
+-
 
 
 
