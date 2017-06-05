@@ -26,6 +26,36 @@ SPA stands for "Single Page Applications" and is a shell page in which we can lo
 - Typescript is a super set of javascript. Which means any javascript code will work as Typescript
 - It brings some useful features that are missing in javascript supported by most browsers
 - With typescript, we get modules, classes, interfaces, access modifiers, intellicence and compile time checking
+- In typescript you cannot change the type of a varibale
+For example, say we have a variable
+myVar = "a string"
+unlike javascript we cannot assign it a different value of type int
+myVar = 25
+- We can declare the type of variable in tyepscript. Although we don't have to.  
+
+{% highlight javascript %}
+myVar:String = "hello"
+myVar:number = 20
+myVar:boolean = true
+myVar:any
+myVar = 50
+myVar:number[]
+{% endhighlight %}
+
+- Typescript allows us to make classes
+
+{% highlight javascript %}
+class car{
+  speed:number;
+  constructor(mph:number){
+    this.speed = mph;
+  }
+}
+
+myCar:Car = new Car(79)
+
+{% endhighlight %}
+
 
 ## Building blocks of an Angular 2 Application
 - Components, directives, routers and services.
@@ -68,3 +98,16 @@ export class RatingComponent{
 {% endhighlight %}
 
 **Note: npm is used to handle dependencies of our application**
+
+## component.ts file
+- the import statement imports the component from the angular class
+- Next up is the decorator defined by @Component{} and it defines more information about the class like how it works
+- inside the decorator is something called selector, and is the name of the tag which the component and component view is loaded into
+-  This file contains the logic
+
+## component.html
+- contains the html
+
+## component.css
+- contains the style sheet
+- captain obvious!
