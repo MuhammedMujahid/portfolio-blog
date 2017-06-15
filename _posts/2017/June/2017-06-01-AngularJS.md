@@ -111,3 +111,61 @@ export class RatingComponent{
 ## component.css
 - contains the style sheet
 - captain obvious!
+
+## Directives
+- Directives are something that tell angular  what to do
+
+## creating a new component
+- ng generate component componentName
+- component has "implements OnInit", you can assign the component to do something on initialization
+- to display a child component, you have to put the component tag in the component.html file of the root component
+- in addition, to have the component display on site, you have to write an import statement in the home component.
+- import { ComponentName } from './locationOfFile'
+
+## ng content directive
+- if you want to display content by putting it inside a tag such as <app-home></app-home> you can do so by using the ng content directive
+- write <ng-content></ng-content> inside the component.html file
+
+## data binding
+- Passing data back and forward between component and template
+- **String interpolation** {{stringName}}
+- **event binding** allows data to flow out of view (HTML file) and into the class (typescript file) and bind events to Html elements
+- **Two way data binding** allows data to flow both ways
+- **Property Binding** <input[required]='expression'> binds expression to a HTML property
+### Property Binding
+- one way to property bind is by saying
+{% highlight html %}
+<input [value] = "nameOfProperty"/>
+{% endhighlight %}
+- Another way is to use string interpolation
+{% highlight html %}
+<input required = {{nameOfProperty}}/>
+{% endhighlight %}
+
+### event binding
+- Binding native events suhc as click events
+{% highlight html %}
+<button (click)="function">
+{% endhighlight %}
+- Binding to custom events that we make
+{% highlight html %}
+<app-home (update)="function"></app-home>
+{% endhighlight %}
+
+## Two way data binding
+- [(ngModel)]
+
+## Sending data between two components
+### /@Input
+- if you want to pass data from root component to child component, you do it through the root components component.html file
+- do this by binding what ever data you want in the tag referencing the child component
+{% highlight html %}
+<app-home [bindName]="propertyName">I like trains</app-home>
+{% end highlight %}
+- in addition you will have to use the input decorator, and add "input" in the import statement at the top of the component.ts file of the component you want to data to go to.
+{% highlight html %}
+@Input() bindName
+{% end highlight %}
+
+### /@Output
+-

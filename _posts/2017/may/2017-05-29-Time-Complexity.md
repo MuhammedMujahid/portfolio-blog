@@ -18,5 +18,7 @@ The worst case run time is the most crucial for applications such as games, fina
 
 you can record the time complexity of an algorithm by recording the starting time before running the algorithm and ending time after it and substracting the two
 
-## Primitive operations
-- 
+## What is pseudo code?
+- Pseudo code is a high level description of an algorithm
+- It is more structured than english prose but less detailed than a program
+- This is the preferred way to describe algorithms and usually hides design issues
