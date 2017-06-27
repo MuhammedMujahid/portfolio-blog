@@ -169,3 +169,218 @@ export class RatingComponent{
 
 ### /@Output
 -
+
+##index. html
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>NinjaDirectory</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <app-root>Loading...</app-root>
+</body>
+
+	<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyCx18R2crzYSXV8Sp0KsSy35I-FzuTTKME",
+			authDomain: "nn-angular-3f5e8.firebaseapp.com",
+			databaseURL: "https://nn-angular-3f5e8.firebaseio.com",
+			storageBucket: "nn-angular-3f5e8.appspot.com",
+			messagingSenderId: "941550239447"
+		};
+		firebase.initializeApp(config);
+	</script>
+</html>
+
+
+## main .ts
+
+import './polyfills.ts';
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';
+import { environment } from './environments/environment';
+import { AppModule } from './app/app.module';
+import { LoggingService } from './app/logging.service';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule, [LoggingService]);
+
+
+## ninja .json
+
+[
+  {
+    "name":"Shaun",
+    "belt":"black"
+  },{
+    "name": "Yoshi",
+    "belt": "black"
+  },{
+    "name": "Ryu",
+    "belt": "red"
+  },{
+    "name": "Crystal",
+    "belt": "purple"
+  }
+]
+
+
+## styles .css
+
+body{
+  font-family: verdana;
+  letter-spacing: 0.1em;
+  color: #606060;
+  background: #eee;
+  padding: 20px;
+}
+
+h1,h2,h3{
+  font-weight: normal;
+  margin-top: 0;
+}
+
+h1{
+  text-indent: -10000px;
+  background: url(logo.png) no-repeat center bottom;
+  background-size: 100%;
+  width: 140px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+/* NAVBAR */
+
+nav{
+  width: 100%;
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+nav ul{
+  padding: 0 !important;
+  background: #0288d1;
+  display: flex;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
+  border-radius: 2px;
+  margin-top: 0;
+}
+
+nav li{
+  flex-basis: 0;
+  flex-grow: 1;
+  list-style-type: none;
+}
+
+nav a{
+  text-align: center;
+  padding: 16px 0;
+  color: #eee;
+  display: block;
+  text-decoration: none;
+}
+
+nav a:hover{
+  background: #1298e1;
+}
+
+/* MAIN */
+
+#main{
+  background: #fdfdfd;
+  padding: 20px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
+  border-radius: 2px;
+  width: 100%;
+  max-width: 740px;
+  box-sizing: border-box;
+  margin: 0 auto
+}
+
+#filter{
+  padding: 12px;
+  background: #e7e7e7;
+  border-radius: 2px;
+  line-height: 30px
+}
+
+#filter input{
+  padding: 8px;
+  width: 300px;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  float: right;
+}
+
+#filter:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#ninja-listing li{
+  padding: 16px 0;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.single-ninja span{
+  display: inline-block;
+  border-radius: 2px;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 8px !important;
+}
+
+.single-ninja h3{
+  padding: 4px;
+  font-size: 20px;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.single-ninja div{
+  float: right;
+  margin-right: 10px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+#add-ninja{
+  margin-top: 30px;
+  background: #e7e7e7;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+#add-ninja input{
+  display: inline-block;
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid #ddd;
+  width: 240px;
+}
+
+#add-ninja button{
+  background: #0288d1;
+  color: #eee;
+  padding: 8px 10px;
+  border: 0;
+  borader-radius: 2px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  float: right;
+}
