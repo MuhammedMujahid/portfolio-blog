@@ -111,6 +111,7 @@ export class RatingComponent{
 ## component.css
 - contains the style sheet
 - captain obvious!
+- hi
 
 ## Directives
 - Directives are something that tell angular  what to do
