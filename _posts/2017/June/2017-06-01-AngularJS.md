@@ -398,7 +398,7 @@ nav a:hover{
   <input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="term" />
 </form>
 <ul id="ninja-listing">
-  <li *ngFor="let ninja of ninjas | filter:term">
+  <!-- <li *ngFor="let ninja of ninjas | filter:term">
     <div class="single-ninja">
       <!-- Belt Color -->
       <span [ngStyle]="{background: ninja.belt}">{{ninja.belt}} belt</span>
@@ -439,9 +439,9 @@ export class DirectoryComponent implements OnInit {
   }
 
   ngOnInit() {
-    /*this.dataService.fetchData().subscribe(
+    <!-- /*this.dataService.fetchData().subscribe(
       (data) => this.ninjas = data
-    );*/
+    );*/  -->
 
     this.fbGetData();
   }
