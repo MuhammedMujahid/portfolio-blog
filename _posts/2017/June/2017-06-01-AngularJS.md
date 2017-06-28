@@ -239,7 +239,7 @@ platformBrowserDynamic().bootstrapModule(AppModule, [LoggingService]);
 
 
 ## styles .css
-
+{% highlight css %}
 body{
   font-family: verdana;
   letter-spacing: 0.1em;
@@ -297,6 +297,9 @@ nav a:hover{
   background: #1298e1;
 }
 
+{% endhighlight %}
+
+{% highlight html %}
 
 #main{
   background: #fdfdfd;
@@ -329,6 +332,7 @@ nav a:hover{
   display: block;
   clear: both;
 }
+{% endhighlight %}
 
 #ninja-listing li{
   padding: 16px 0;
@@ -385,9 +389,10 @@ nav a:hover{
 }
 
 ## directory component .css
-
+{% highlight css %}
 #ninja-listing{margin: 0; padding: 0;}
 #ninja-listing li{list-style-type: none; margin: 10px 0;}
+{% endhighlight %}
 
 ## directory component .html
 {% highlight html %}
