@@ -262,7 +262,7 @@ h1{
   margin: 0 auto;
 }
 
-/* NAVBAR */
+
 
 nav{
   width: 100%;
@@ -297,7 +297,6 @@ nav a:hover{
   background: #1298e1;
 }
 
-/* MAIN */
 
 #main{
   background: #fdfdfd;
@@ -384,3 +383,244 @@ nav a:hover{
   cursor: pointer;
   float: right;
 }
+
+## directory component .css
+
+#ninja-listing{margin: 0; padding: 0;}
+#ninja-listing li{list-style-type: none; margin: 10px 0;}
+
+## directory component .html
+{% highlight html %}
+<h2>Ninja Listing</h2>
+
+<form id="filter">
+  <label>Filter ninjas by name:</label>
+  <input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="term" />
+</form>
+<ul id="ninja-listing">
+  <li *ngFor="let ninja of ninjas | filter:term">
+    <div class="single-ninja">
+      <!-- Belt Color -->
+      <span [ngStyle]="{background: ninja.belt}">{{ninja.belt}} belt</span>
+      <!-- Ninja Name -->
+      <h3>{{ninja.name}}</h3>
+      <div (click)="remove($event)" [attr.data-name]="ninja.name">delete</div>
+    </div>
+  </li>
+</ul>
+<form id="add-ninja">
+  <input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="name"/>
+  <input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="belt"/>
+  <button (click)="fbPostData(name, belt)">Add Ninja</button>
+</form>
+{% endhighlight %}
+
+## directory component .ts
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { LoggingService } from '../logging.service';
+import { DataService } from '../data.service';
+declare var firebase: any;
+
+@Component({
+  selector: 'app-directory',
+  templateUrl: './directory.component.html',
+  styleUrls: ['./directory.component.css']
+})
+export class DirectoryComponent implements OnInit {
+
+  ninjas = [];
+  name = '';
+  belt = '';
+  constructor(private logger: LoggingService, private dataService: DataService) { }
+
+  logIt() {
+    this.logger.log();
+  }
+
+  ngOnInit() {
+    /*this.dataService.fetchData().subscribe(
+      (data) => this.ninjas = data
+    );*/
+
+    this.fbGetData();
+  }
+
+  fbGetData() {
+    firebase.database().ref('/').on('child_added', (snapshot) => {
+      this.ninjas.push(snapshot.val())
+    })
+  }
+
+  fbPostData(name, belt) {
+    firebase.database().ref('/').push({name: name, belt: belt})
+  }
+}
+
+
+## Home component .html
+
+<p>
+{{homeTitle}}
+</p>
+<button (click)="logIt()">Log me</button>
+
+
+## home component .ts
+
+
+import { Component, OnInit } from '@angular/core';
+import { LoggingService } from '../logging.service';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
+export class HomeComponent implements OnInit {
+
+  homeTitle = "Welcome to the ninja directory";
+
+  constructor(private logger: LoggingService) { }
+
+  logIt() {
+    this.logger.log();
+  }
+
+  ngOnInit() {
+  }
+
+}
+
+
+## app .component .html
+
+<header>
+  <h1>{{title}}</h1>
+  <nav>
+    <ul>
+      <li><a [routerLink]="['/']">Home</a></li>
+      <li><a [routerLink]="['directory']">Directory</a></li>
+    </ul>
+  </nav>
+</header>
+<section id="main">
+  <!--app-home [ninja]="ninja" (onYell)="yell($event)">Hello there!</app-home-->
+  <router-outlet></router-outlet>
+</section>
+
+## app .component .ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'app works!, woop woop';
+
+}
+
+
+## app .module .ts
+
+// Angular modules
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
+
+// Application Components, Filters, Services, ...
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { DirectoryComponent } from './directory/directory.component';
+import { APP_ROUTES } from './app.routes';
+import { FilterPipe } from './filter.pipe';
+import { LoggingService } from './logging.service';
+import { DataService } from './data.service';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    DirectoryComponent,
+    FilterPipe
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    RouterModule.forRoot(APP_ROUTES)
+  ],
+  providers: [LoggingService, DataService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+## app .routes .ts
+
+import { DirectoryComponent } from "./directory/directory.component";
+import { HomeComponent } from "./home/home.component";
+
+export const APP_ROUTES = [
+  { path: 'directory', component: DirectoryComponent },
+  { path: '', component: HomeComponent }
+];
+
+
+## data .service .ts
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/Rx';
+
+@Injectable()
+export class DataService {
+
+  constructor(private http: Http) { }
+
+  fetchData() {
+  return this.http.get('https://nn-angular-3f5e8.firebaseio.com/.json').map(
+      (res) => res.json()
+    );
+  }
+}
+
+## filter .pipe .ts
+
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'filter'
+})
+export class FilterPipe implements PipeTransform {
+
+  transform(ninjas: any, term: any): any {
+    // check if search term is undefined
+    if (term === undefined) return ninjas;
+    // return updated ninjas array
+    return ninjas.filter(function(ninja) {
+      return ninja.name.toLowerCase().includes(term.toLowerCase());
+    })
+  }
+
+}
+
+
+## logging .service .ts
+
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class LoggingService {
+
+  log() {
+    console.log('I am the logging service');
+  }
+  constructor() { }
+
+}
+
+
+##
